@@ -12,6 +12,7 @@
 		7104F72C2714784200899420 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7104F72B2714784200899420 /* Assets.xcassets */; };
 		7104F72F2714784200899420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7104F72D2714784200899420 /* LaunchScreen.storyboard */; };
 		7104F73727148B3B00899420 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7104F73627148B3B00899420 /* LoginViewController.swift */; };
+		71451A17271A28C60013AE91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71451A16271A28C60013AE91 /* GoogleService-Info.plist */; };
 		7180D09127174B87004DEC13 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7180D09027174B87004DEC13 /* LoginScreen.swift */; };
 		7180D09627187B43004DEC13 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7180D09527187B43004DEC13 /* RegisterViewController.swift */; };
 		7180D09827187D28004DEC13 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7180D09727187D28004DEC13 /* RegisterScreen.swift */; };
@@ -27,6 +28,7 @@
 		7104F72E2714784200899420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7104F7302714784200899420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7104F73627148B3B00899420 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		71451A16271A28C60013AE91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7180D09027174B87004DEC13 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		7180D09527187B43004DEC13 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7180D09727187D28004DEC13 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				7104F72D2714784200899420 /* LaunchScreen.storyboard */,
 				7104F72B2714784200899420 /* Assets.xcassets */,
 				7104F7302714784200899420 /* Info.plist */,
+				71451A16271A28C60013AE91 /* GoogleService-Info.plist */,
 			);
 			path = LoginViewCode;
 			sourceTree = "<group>";
@@ -134,7 +137,6 @@
 				D68A71C98C67D98FD56503FD /* Pods-LoginViewCode.debug.xcconfig */,
 				013EE034F2CD8E3D42A779E8 /* Pods-LoginViewCode.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,6 +210,7 @@
 			files = (
 				7104F72F2714784200899420 /* LaunchScreen.storyboard in Resources */,
 				7104F72C2714784200899420 /* Assets.xcassets in Resources */,
+				71451A17271A28C60013AE91 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

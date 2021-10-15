@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
+    var auth: Auth?
+    
     var loginScreen:LoginScreen?
     
     override func loadView() {
@@ -20,6 +23,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.loginScreen?.configTextFieldDelegate(delegate: self)
         self.loginScreen?.delegate(delegate: self)
+        self.auth = Auth.auth()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,9 +33,25 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginScreenProtocol {
+    
+    
     func actionLoginButton() {
-        print("Deu certo login Button!!!")
+        guard let login = self.loginScreen else {return}
+        
+        self.auth?.signIn(withEmail: login.getEmail(), password: login.getPassword(), completion: { usuario, error in
+            
+            if error != nil {
+                print("Atenção dados incorretos, verifique e tente novamente")
+            }else {
+                if usuario == nil {
+                    print("Tivemos um problema inesperado, tente novamente mais tarde")
+                }else {
+                    print("Parabens, usuario logado com sucesso!")
+                }
+            }
+        })
     }
+                          
     
     func actionRegisterButton() {
         let vc: RegisterViewController = RegisterViewController()
@@ -43,13 +63,11 @@ extension LoginViewController: LoginScreenProtocol {
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        print("textFieldShouldBeginEditing")
         return true 
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.loginScreen?.validaTextField() 
-        print("textFieldDidEndEditing")
+        self.loginScreen?.validaTextField()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
