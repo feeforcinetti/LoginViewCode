@@ -25,7 +25,6 @@ class RegisterScreen: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "back"), for: .normal)
         button.addTarget(self, action: #selector(self.tappedBackButton), for: .touchUpInside)
-        
         return button
     }()
     
@@ -34,7 +33,6 @@ class RegisterScreen: UIView {
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "usuario")
         image.contentMode = .scaleAspectFit
-        
         return image
     }()
     
@@ -48,7 +46,6 @@ class RegisterScreen: UIView {
         textField.placeholder = "Digite seu email"
         textField.font = UIFont.systemFont(ofSize: 14)
         textField.textColor = .darkGray
-        
         return textField
     }()
     
@@ -63,7 +60,6 @@ class RegisterScreen: UIView {
         textField.placeholder = "Digite sua senha"
         textField.font = UIFont.systemFont(ofSize: 14)
         textField.textColor = .darkGray
-        
         return textField
     }()
     
@@ -76,7 +72,6 @@ class RegisterScreen: UIView {
         button.layer.cornerRadius = 7.5
         button.backgroundColor = UIColor(red: 3/255, green: 58/255, blue: 51/255, alpha: 1.0)
         button.addTarget(self, action: #selector(self.tappedRegisterButton), for: .touchUpInside)
-        
         return button
     }()
     

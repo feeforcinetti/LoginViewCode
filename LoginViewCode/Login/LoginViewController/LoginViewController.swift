@@ -11,8 +11,8 @@ import Firebase
 class LoginViewController: UIViewController {
 
     var auth: Auth?
-    
     var loginScreen:LoginScreen?
+    var alert: Alert?
     
     override func loadView() {
         self.loginScreen = LoginScreen()
@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
         self.loginScreen?.configTextFieldDelegate(delegate: self)
         self.loginScreen?.delegate(delegate: self)
         self.auth = Auth.auth()
+        self.alert = Alert(controller: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,30 +35,31 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginScreenProtocol {
     
-    
     func actionLoginButton() {
-        guard let login = self.loginScreen else {return}
         
-        self.auth?.signIn(withEmail: login.getEmail(), password: login.getPassword(), completion: { usuario, error in
-            
-            if error != nil {
-                print("Atenção dados incorretos, verifique e tente novamente")
-            }else {
-                if usuario == nil {
-                    print("Tivemos um problema inesperado, tente novamente mais tarde")
-                }else {
-                    print("Parabens, usuario logado com sucesso!")
-                }
-            }
-        })
+        let vc: HomeViewController = HomeViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+//        guard let login = self.loginScreen else {return}
+//
+//        self.auth?.signIn(withEmail: login.getEmail(), password: login.getPassword(), completion: { usuario, error in
+//
+//            if error != nil {
+//                self.alert?.getAlert(titulo: "Atenção", mensagem: "Atenção dados incorretos, verifique e tente novamente")
+//            }else {
+//                if usuario == nil {
+//                    self.alert?.getAlert(titulo: "Atenção", mensagem: "Tivemos um problema inesperado, tente novamente mais tarde")
+//                }else {
+//                    self.alert?.getAlert(titulo: "Parabens", mensagem: "Usuario logado com sucesso!")
+//                }
+//            }
+//        })
     }
                           
-    
     func actionRegisterButton() {
         let vc: RegisterViewController = RegisterViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
     
 }
 
